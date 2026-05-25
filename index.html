@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhollyWare™ — Household Staples, Honestly Priced</title>
+  <meta name="description" content="WhollyWare cross-compares prices for household staples across every store you actually shop at. Net savings shown honestly. A Sentir Solutions® company." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:      #0D2236;
+      --mid:       #1A3D5C;
+      --light:     #2E6B8C;
+      --accent:    #4A94BB;
+      --accent-lt: #7FB8D4;
+      --cta:       #E87C2A;
+      --cta-lt:    #F09A52;
+      --bg:        #F4F6F8;
+      --bg-alt:    #FFFFFF;
+      --border:    #C8D8E4;
+      --text:      #0D1F2D;
+      --muted:     #4A5D6B;
+      --max:       1080px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--dark);
+      padding: 0 2rem; height: 62px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo {
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem;
+      color: #FFFFFF; text-decoration: none; letter-spacing: 0.03em;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .logo-mark {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #FFFFFF; line-height: 1;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; }
+    .nav-link {
+      font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none;
+      padding: 0.4rem 0.8rem; border-radius: 3px; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: #FFFFFF; }
+    .nav-link.active { color: #FFFFFF; }
+    .nav-cta {
+      background: var(--cta); color: #FFFFFF; font-weight: 600;
+      padding: 0.45rem 1rem; margin-left: 0.4rem;
+    }
+    .nav-cta:hover { background: var(--cta-lt); color: #FFFFFF; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 2rem; }
+    section.alt { background: var(--bg-alt); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(140deg, var(--dark) 0%, var(--mid) 55%, var(--light) 100%);
+      padding: 6rem 2rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 20px; padding: 5px 14px; margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.85);
+    }
+    .hero-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); display: block; flex-shrink: 0;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif; font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      color: #FFFFFF; line-height: 1.15; margin-bottom: 1.25rem; max-width: 600px;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent-lt); }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.72);
+      max-width: 520px; line-height: 1.85; margin-bottom: 1.75rem;
+    }
+    .hero-tagline {
+      display: inline-block;
+      background: rgba(74,148,187,0.18); border: 1px solid rgba(74,148,187,0.35);
+      border-radius: 8px; padding: 10px 20px; margin-bottom: 2rem;
+    }
+    .hero-tagline span {
+      font-family: 'Fraunces', serif; font-style: italic;
+      font-size: 1.1rem; color: var(--accent-lt); font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: var(--cta); color: #FFFFFF;
+      text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      padding: 13px 30px; border-radius: 6px; letter-spacing: 0.02em; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--cta-lt); }
+    .btn-ghost {
+      display: inline-block; background: rgba(255,255,255,0.09); color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,0.22); text-decoration: none;
+      font-size: 0.9rem; padding: 13px 24px; border-radius: 6px; transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+
+    /* Hero decorative SVG */
+    .hero-icon {
+      position: absolute; right: 6%; top: 50%; transform: translateY(-52%);
+      opacity: 0.09; pointer-events: none;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Fraunces', serif; font-weight: 300;
+      font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark); line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    h2 em { font-style: italic; color: var(--light); }
+    .divider {
+      width: 48px; height: 2px; background: var(--accent);
+      margin: 1rem 0 1.5rem;
+    }
+    .lead {
+      font-size: 1rem; color: var(--muted); line-height: 1.85;
+      max-width: 600px; margin-bottom: 2.5rem;
+    }
+
+    /* ── CARD GRID ── */
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+    .four-col  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2rem; }
+    .card {
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-top: 3px solid var(--accent); padding: 2rem;
+    }
+    .card-num {
+      font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 300;
+      color: var(--border); margin-bottom: 0.85rem;
+    }
+    .card h3 {
+      font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+    .card.mid   { border-top-color: var(--mid); }
+    .card.light { border-top-color: var(--light); }
+
+    /* ── PRICING CARDS ── */
+    .tier-name {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .tier-price {
+      font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 300;
+      color: var(--dark); line-height: 1; margin-bottom: 0.25rem;
+    }
+    .tier-period { font-size: 0.78rem; color: #8AAABB; margin-bottom: 0.75rem; }
+    .tier-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.75; }
+
+    /* ── DARK CALLOUT ── */
+    .sincere-block {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--mid) 100%);
+      border-radius: 4px; padding: 3rem;
+    }
+    .sincere-block .section-label { color: var(--accent-lt); margin-bottom: 1rem; }
+    .sincere-block h2 { color: #FFFFFF; }
+    .sincere-block h2 em { color: var(--accent-lt); }
+    .sincere-block .lead { color: rgba(255,255,255,0.65); max-width: 640px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+    .pill {
+      font-size: 0.82rem; color: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+      padding: 6px 14px; border-radius: 20px;
+    }
+
+    /* ── WAITLIST CTA ── */
+    .waitlist-block {
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      padding: 3rem; text-align: center;
+    }
+    .waitlist-block .section-label { margin-bottom: 0.75rem; }
+    .waitlist-block h2 { margin: 0 auto 0.75rem; }
+    .waitlist-block p { font-size: 0.95rem; color: var(--muted); max-width: 440px; margin: 0 auto 1.75rem; }
+    .btn-cta {
+      display: inline-block; background: var(--cta); color: #FFFFFF;
+      text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      padding: 14px 36px; border-radius: 6px; transition: background 0.2s;
+    }
+    .btn-cta:hover { background: var(--cta-lt); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07121C; color: rgba(255,255,255,0.4);
+      padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem;
+    }
+    footer a { color: var(--accent-lt); text-decoration: none; }
+    footer a:hover { color: #FFFFFF; }
+    footer p + p { margin-top: 0.4rem; }
+
+    /* ── FADE-IN ── */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 860px) {
+      .three-col, .four-col { grid-template-columns: 1fr; }
+      .hero-icon { display: none; }
+      nav { padding: 0 1rem; }
+      section { padding: 3.5rem 1.25rem; }
+      .sincere-block { padding: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .nav-links .nav-link:not(.nav-cta):not(.active) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">
+      <span class="logo-mark">W</span>
+      WhollyWare™
+    </a>
+    <div class="nav-links">
+      <a href="#how" class="nav-link">How It Works</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="https://sentirsolutions.github.io/sentir-solutions-site/" class="nav-link" target="_blank" rel="noopener">Sentir Solutions</a>
+      <a href="mailto:tim.hislop@gmail.com?subject=WhollyWare%20Waitlist" class="nav-link nav-cta">Join Waitlist →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <svg class="hero-icon" width="320" height="320" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="4,24 24,6 44,24" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="10" y="23" width="28" height="20" rx="1" stroke="white" stroke-width="2" fill="none"/>
+        <rect x="18" y="30" width="12" height="13" rx="1" stroke="white" stroke-width="1.7" fill="none"/>
+        <path d="M14 23 L14 43" stroke="white" stroke-width="1.2" opacity="0.5"/>
+        <path d="M34 23 L34 43" stroke="white" stroke-width="1.2" opacity="0.5"/>
+      </svg>
+
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span>Household price intelligence &nbsp;·&nbsp; A Sentir Solutions® brand</span>
+      </div>
+
+      <h1>Stop overpaying for<br />the things you buy<br /><em>every single week.</em></h1>
+
+      <p class="hero-sub">
+        WhollyWare cross-compares prices for paper towels, laundry detergent,
+        cleaning supplies, and every household staple — across every store you
+        actually shop at. Net savings, honestly shown.
+      </p>
+
+      <div class="hero-tagline">
+        <span>The household staple plan that pays you back.</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="mailto:tim.hislop@gmail.com?subject=WhollyWare%20Waitlist" class="btn-primary">Join the Waitlist →</a>
+        <a href="https://sentirsolutions.github.io/sentir-solutions-site/" class="btn-ghost" target="_blank" rel="noopener">About Sentir Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="alt">
+    <div class="container">
+      <p class="section-label fade-in">How It Works</p>
+      <h2 class="fade-in">Three steps to<br /><em>household savings.</em></h2>
+      <div class="divider fade-in"></div>
+      <p class="lead fade-in">WhollyWare does the comparison work so you don't have to — then shows you the honest number, gas and all.</p>
+
+      <div class="three-col">
+        <div class="card fade-in">
+          <div class="card-num">01</div>
+          <h3>Tell us your stores</h3>
+          <p>Enter your zip code. WhollyWare finds your nearest Walmart, Target, Costco, Kroger, Dollar General — filtered to what's actually reachable.</p>
+        </div>
+        <div class="card mid fade-in">
+          <div class="card-num">02</div>
+          <h3>We pull the weekly circulars</h3>
+          <p>Every week, WhollyWare ingests store sale circulars and compares unit prices across brands, sizes, and stores — automatically.</p>
+        </div>
+        <div class="card light fade-in">
+          <div class="card-num">03</div>
+          <h3>See your Found Money</h3>
+          <p>Your personalized household shopping list, organized by store, with net savings shown — gas costs included. The number in your pocket, not the flattering one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <p class="section-label fade-in">Pricing</p>
+      <h2 class="fade-in">Start free.<br /><em>Pay for what saves you more.</em></h2>
+      <div class="divider fade-in"></div>
+      <p class="lead fade-in">No ads. No affiliate deals. No data sales. Revenue is subscriptions only — the Sincere Strategy® in practice.</p>
+
+      <div class="four-col">
+        <div class="card fade-in">
+          <p class="tier-name">Price Finder</p>
+          <div class="tier-price">Free</div>
+          <p class="tier-period">always</p>
+          <p class="tier-desc">Cross-store unit price comparison for household staples. Weekly savings report. Always free.</p>
+        </div>
+        <div class="card fade-in">
+          <p class="tier-name">Staple Tracker</p>
+          <div class="tier-price">$5<span style="font-size:1rem;">/mo</span></div>
+          <p class="tier-period">per household</p>
+          <p class="tier-desc">Your recurring staples tracked automatically. Buy-off alerts when your brand goes on sale.</p>
+        </div>
+        <div class="card fade-in">
+          <p class="tier-name">Health Guard</p>
+          <div class="tier-price">$12<span style="font-size:1rem;">/mo</span></div>
+          <p class="tier-period">per household</p>
+          <p class="tier-desc">Hard ingredient filters — fragrance-free, dye-free, allergy-safe. Never trades health for savings.</p>
+        </div>
+        <div class="card fade-in">
+          <p class="tier-name">Full Household</p>
+          <div class="tier-price">$19<span style="font-size:1rem;">/mo</span></div>
+          <p class="tier-period">per household</p>
+          <p class="tier-desc">Full staple history, pantry tracking, coupon vault, and multi-store trip optimizer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINCERE STRATEGY -->
+  <section class="alt">
+    <div class="container">
+      <div class="sincere-block fade-in">
+        <p class="section-label">The Sincere Strategy®</p>
+        <h2>WhollyWare is built on one rule:<br /><em>your interests, always first.</em></h2>
+        <p class="lead">
+          Every competitor in the household staples space is funded by the retailers and brands they claim to help you compare. Their incentive is to drive you toward higher-margin products and sponsored placements. Ours isn't. It can't be.
+        </p>
+        <div class="pills">
+          <span class="pill">Zero paid placements — ever</span>
+          <span class="pill">Health filters are hard rules, not suggestions</span>
+          <span class="pill">Net savings shown — gas costs included</span>
+          <span class="pill">Your data is never sold or targeted</span>
+          <span class="pill">Subscription-only revenue</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-top:2rem;">
+          A <a href="https://sentirsolutions.github.io/sentir-solutions-site/" target="_blank" rel="noopener" style="color:var(--accent-lt);">Sentir Solutions®</a> company &nbsp;·&nbsp; whollyware.com &nbsp;·&nbsp; Coming 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section>
+    <div class="container">
+      <div class="waitlist-block fade-in">
+        <p class="section-label">Coming Soon — 2026</p>
+        <h2>Be first to know<br /><em>when WhollyWare launches.</em></h2>
+        <p>We're building WhollyWare now — after WhollyFare's pilot proves the model. Join the waitlist and we'll reach out when your area goes live.</p>
+        <a href="mailto:tim.hislop@gmail.com?subject=WhollyWare%20Waitlist" class="btn-cta">Join the Waitlist →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        <strong style="color:#FFFFFF;">WhollyWare™</strong> &nbsp;·&nbsp;
+        A <a href="https://sentirsolutions.github.io/sentir-solutions-site/" target="_blank" rel="noopener">Sentir Solutions®</a> Company &nbsp;·&nbsp;
+        Charlottesville, Virginia
+      </p>
+      <p>
+        <a href="https://sentirsolutions.github.io/sentir-solutions-site/mission.html" target="_blank" rel="noopener">The Sincere Strategy®</a> &nbsp;·&nbsp;
+        <a href="https://whollyfare-website-whlrpy4dnreymq3gbjjkup.streamlit.app" target="_blank" rel="noopener">WhollyFare® ↗</a> &nbsp;·&nbsp;
+        <a href="mailto:tim.hislop@gmail.com">tim.hislop@gmail.com</a>
+      </p>
+      <p style="margin-top:0.5rem;opacity:0.4;">Zero paid placements &nbsp;·&nbsp; Revenue is subscriptions only</p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
